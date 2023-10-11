@@ -2,7 +2,7 @@ OVERVIEW:
 ShinyWrappR was made to enhance the RStudio code writing experience.  This Shiny app and the gadenbuie/shrtcts* package allow mapping of custom code to RStudio's keyboard shortcuts.  Additionally, your custom code will wrap around highlighted text/code in the editor pane.  Simply add your own entries to this Shiny app and run a few lines of code to reduce overall typing in Rstudio.
 
 THINGS TO KNOW:
-1. Place the .shrtcts.yaml file in this repository in your home path\.config folder, to load pre-made shortcuts.
+1. Place the .shrtcts.yaml file in this repository in your .config folder of your home path directory (windows-> %userprofile%), to load pre-made shortcuts.
 
 2. The grey boxes below contain: 
 	* Row one - Text name.  This text is searchable from the Ctrl+F find function.
