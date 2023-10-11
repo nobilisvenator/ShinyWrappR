@@ -4,7 +4,7 @@ ShinyWrappR was made to enhance the RStudio code writing experience.  This Shiny
 THINGS TO KNOW:
 1. Place the .shrtcts.yaml file in this repository in your .config folder of your home path directory (windows-> %userprofile%), to load pre-made shortcuts.
 
-2. The grey boxes below contain: 
+2. Each yaml entry consists of: 
 	* Row one - Text name.  This text is searchable from the Ctrl+F find function.
 	* Row two - Description.  
 	* Leftwrap/Righwrap fields - Custom text/code that will prefix/suffix (respectively) highlighted code in the editor pane
