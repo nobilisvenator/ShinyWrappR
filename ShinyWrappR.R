@@ -135,8 +135,7 @@ server <- function(input, output, session) {
     file.create(yaml_file)
     removeModal()
   })
-  
-  
+
     entries <- reactiveVal(list())
   
   observe({
@@ -181,18 +180,7 @@ server <- function(input, output, session) {
       })
     })
   })
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
   
   # Move Up Logic
   observeEvent(lapply(1:100, function(i) input[[paste0("moveup_", i)]]), {
@@ -222,27 +210,7 @@ server <- function(input, output, session) {
     }
   }, ignoreInit = TRUE)
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  #Remove button
   observeEvent(lapply(1:100, function(i) input[[paste0("remove_", i)]]), {  # Here, I've chosen 100 just as an upper limit. This assumes you'll not have more than 100 entries.
     # Loop through all remove buttons to find the one that triggered this event
     for (i in 1:100) {
@@ -267,10 +235,7 @@ server <- function(input, output, session) {
     entries(c(list(newEntry), entries()))
   })
   
-  
-
-  
-  
+  #Save button
   observeEvent(input$saveYaml, {
     entryList <- entries()
     entriesToSave <- lapply(seq_along(entryList), function(i) {
@@ -297,7 +262,7 @@ server <- function(input, output, session) {
     entriesToSave <- Filter(Negate(is.null), entriesToSave)
     yamlContent <- as.character(yaml::as.yaml(entriesToSave))
     
-    # Adjust formatting
+    # Adjust formatting of Yaml file
     yamlContent <- gsub("  Binding: \"", "  Binding: |\n    ", yamlContent, fixed = TRUE)
     yamlContent <- gsub("\"", "", yamlContent, fixed = TRUE)
     yamlContent <- gsub("\\|\n    ", "|\n    ", yamlContent)  # Four spaces for line 4
@@ -309,13 +274,7 @@ server <- function(input, output, session) {
     writeLines(yamlContent, yaml_file)
   })
   
- 
- 
-  
-  
-  
-  
-  
+
 }
 
 shinyApp(ui, server)
