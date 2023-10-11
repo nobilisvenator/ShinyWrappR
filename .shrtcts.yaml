@@ -1,0 +1,326 @@
+- Name: pipe
+  Description: pipe function
+  Binding: |-
+   pipe <- function(x){
+   context <- rstudioapi::getActiveDocumentContext()
+   id <- context$id
+   slct <- context$selection
+   rstudioapi::insertText(text =  paste(' |>', slct[[1]]$text ,' ' ,sep='')  )
+   }
+   pipe()
+  shortcut: F7
+  Interactive: no
+
+- Name: wrappinc
+  Description: wrappinc function
+  Binding: |-
+   wrappinc <- function(x){
+   context <- rstudioapi::getActiveDocumentContext()
+   id <- context$id
+   slct <- context$selection
+   rstudioapi::insertText(text =  paste('c(', slct[[1]]$text ,')' ,sep='')  )
+   }
+   wrappinc()
+  shortcut: Ctrl+I
+  Interactive: no
+
+- Name: wrappincol
+  Description: wrappincol function
+  Binding: |-
+   wrappincol <- function(x){
+   context <- rstudioapi::getActiveDocumentContext()
+   id <- context$id
+   slct <- context$selection
+   rstudioapi::insertText(text =  paste('colnames(', slct[[1]]$text ,')' ,sep='')  )
+   }
+   wrappincol()
+  shortcut: Ctrl+H
+  Interactive: no
+
+- Name: wrappincolren
+  Description: wrappincolren function
+  Binding: |-
+   wrappincolren <- function(x){
+   context <- rstudioapi::getActiveDocumentContext()
+   id <- context$id
+   slct <- context$selection
+   rstudioapi::insertText(text =  paste('colnames(', slct[[1]]$text ,')[  ] <- c()' ,sep='')  )
+   }
+   wrappincolren()
+  shortcut: Ctrl+Shift+H
+  Interactive: no
+
+- Name: wrappindataframe
+  Description: wrappindataframe function
+  Binding: |-
+   wrappindataframe <- function(x){
+   context <- rstudioapi::getActiveDocumentContext()
+   id <- context$id
+   slct <- context$selection
+   rstudioapi::insertText(text =  paste('as.data.frame(', slct[[1]]$text ,')' ,sep='')  )
+   }
+   wrappindataframe()
+  shortcut: Ctrl+D
+  Interactive: no
+
+- Name: wrappingreplazy
+  Description: wrappingreplazy function
+  Binding: |-
+   wrappingreplazy <- function(x){
+   context <- rstudioapi::getActiveDocumentContext()
+   id <- context$id
+   slct <- context$selection
+   rstudioapi::insertText(text =  paste('grep(', slct[[1]]$text ,', ignore.case = T )' ,sep='')  )
+   }
+   wrappingreplazy()
+  shortcut: Ctrl+G
+  Interactive: no
+
+- Name: wrappinstall
+  Description: wrappinstall function
+  Binding: |-
+   wrappinstall <- function(x){
+   context <- rstudioapi::getActiveDocumentContext()
+   id <- context$id
+   slct <- context$selection
+   rstudioapi::insertText(text =  paste('install.packages(', slct[[1]]$text ,')' ,sep='')  )
+   }
+   wrappinstall()
+  shortcut: Ctrl+Shift+I
+  Interactive: no
+
+- Name: wrappinlapply
+  Description: wrappinlapply function
+  Binding: |-
+   wrappinlapply <- function(x){
+   context <- rstudioapi::getActiveDocumentContext()
+   id <- context$id
+   slct <- context$selection
+   rstudioapi::insertText(text =  paste('lapply(', slct[[1]]$text ,',function(x){  }   )' ,sep='')  )
+   }
+   wrappinlapply()
+  shortcut: Ctrl+L
+  Interactive: no
+
+- Name: wrappinlength
+  Description: wrappinlength function
+  Binding: |-
+   wrappinlength <- function(x){
+   context <- rstudioapi::getActiveDocumentContext()
+   id <- context$id
+   slct <- context$selection
+   rstudioapi::insertText(text =  paste('length(', slct[[1]]$text ,')' ,sep='')  )
+   }
+   wrappinlength()
+  shortcut: Alt+L
+  Interactive: no
+
+- Name: wrappinlevelsfactor
+  Description: wrappinlevelsfactor function
+  Binding: |-
+   wrappinlevelsfactor <- function(x){
+   context <- rstudioapi::getActiveDocumentContext()
+   id <- context$id
+   slct <- context$selection
+   rstudioapi::insertText(text =  paste('levels(as.factor(', slct[[1]]$text ,'))' ,sep='')  )
+   }
+   wrappinlevelsfactor()
+  shortcut: Ctrl+Alt+L
+  Interactive: no
+
+- Name: wrappinlowercase
+  Description: wrappinlowercase function
+  Binding: |-
+   wrappinlowercase <- function(x){
+   context <- rstudioapi::getActiveDocumentContext()
+   id <- context$id
+   slct <- context$selection
+   rstudioapi::insertText(text =  paste('tolower(', slct[[1]]$text ,')' ,sep='')  )
+   }
+   wrappinlowercase()
+  shortcut: Ctrl+Shift+L
+  Interactive: no
+
+- Name: wrappinlibrary
+  Description: wrappinlibrary function
+  Binding: |-
+   wrappinlibrary <- function(x){
+   context <- rstudioapi::getActiveDocumentContext()
+   id <- context$id
+   slct <- context$selection
+   rstudioapi::insertText(text =  paste('library(', slct[[1]]$text ,')' ,sep='')  )
+   }
+   wrappinlibrary()
+  shortcut: Ctrl+B
+  Interactive: no
+
+- Name: wrappinisna
+  Description: wrappinisna function
+  Binding: |-
+   wrappinisna <- function(x){
+   context <- rstudioapi::getActiveDocumentContext()
+   id <- context$id
+   slct <- context$selection
+   rstudioapi::insertText(text =  paste('is.na(', slct[[1]]$text ,')' ,sep='')  )
+   }
+   wrappinisna()
+  shortcut: Alt+N
+  Interactive: no
+
+- Name: wrappinnrow
+  Description: wrappinnrow function
+  Binding: |-
+   wrappinnrow <- function(x){
+   context <- rstudioapi::getActiveDocumentContext()
+   id <- context$id
+   slct <- context$selection
+   rstudioapi::insertText(text =  paste('nrow(', slct[[1]]$text ,')' ,sep='')  )
+   }
+   wrappinnrow()
+  shortcut: Ctrl+N
+  Interactive: no
+
+- Name: wrappinpaste
+  Description: wrappinpaste function
+  Binding: |-
+   wrappinpaste <- function(x){
+   context <- rstudioapi::getActiveDocumentContext()
+   id <- context$id
+   slct <- context$selection
+   rstudioapi::insertText(text =  paste('paste(', slct[[1]]$text ,')' ,sep='')  )
+   }
+   wrappinpaste()
+  shortcut: Ctrl+P
+  Interactive: no
+
+- Name: wrappinrep
+  Description: wrappinrep function
+  Binding: |-
+   wrappinrep <- function(x){
+   context <- rstudioapi::getActiveDocumentContext()
+   id <- context$id
+   slct <- context$selection
+   rstudioapi::insertText(text =  paste('rep(', slct[[1]]$text ,', times=123 )' ,sep='')  )
+   }
+   wrappinrep()
+  shortcut: Ctrl+R
+  Interactive: no
+
+- Name: wrappinrmd
+  Description: wrappinrmd function
+  Binding: |-
+   wrappinrmd <- function(x){
+   context <- rstudioapi::getActiveDocumentContext()
+   id <- context$id
+   slct <- context$selection
+   rstudioapi::insertText(text =  paste('```{r}', slct[[1]]$text ,'```' ,sep='')  )
+   }
+   wrappinrmd()
+  shortcut: F3
+  Interactive: no
+
+- Name: wrappinsort
+  Description: wrappinsort function
+  Binding: |-
+   wrappinsort <- function(x){
+   context <- rstudioapi::getActiveDocumentContext()
+   id <- context$id
+   slct <- context$selection
+   rstudioapi::insertText(text =  paste('sort(', slct[[1]]$text ,')' ,sep='')  )
+   }
+   wrappinsort()
+  shortcut: Alt+O
+  Interactive: no
+
+- Name: wrappintable
+  Description: wrappintable function
+  Binding: |-
+   wrappintable <- function(x){
+   context <- rstudioapi::getActiveDocumentContext()
+   id <- context$id
+   slct <- context$selection
+   rstudioapi::insertText(text =  paste('table(', slct[[1]]$text ,', useNA = ' ,sep='')  )
+   }
+   wrappintable()
+  shortcut: Ctrl+T
+  Interactive: no
+
+- Name: wrappinunlist
+  Description: wrappinunlist function
+  Binding: |-
+   wrappinunlist <- function(x){
+   context <- rstudioapi::getActiveDocumentContext()
+   id <- context$id
+   slct <- context$selection
+   rstudioapi::insertText(text =  paste('unlist(', slct[[1]]$text ,')' ,sep='')  )
+   }
+   wrappinunlist()
+  shortcut: Ctrl+U
+  Interactive: no
+
+- Name: wrappinlist
+  Description: wrappinlist function
+  Binding: |-
+   wrappinlist <- function(x){
+   context <- rstudioapi::getActiveDocumentContext()
+   id <- context$id
+   slct <- context$selection
+   rstudioapi::insertText(text =  paste('list(', slct[[1]]$text ,')' ,sep='')  )
+   }
+   wrappinlist()
+  shortcut: Alt+L
+  Interactive: no
+
+- Name: wrappinunique
+  Description: wrappinunique function
+  Binding: |-
+   wrappinunique <- function(x){
+   context <- rstudioapi::getActiveDocumentContext()
+   id <- context$id
+   slct <- context$selection
+   rstudioapi::insertText(text =  paste('unique(', slct[[1]]$text ,')' ,sep='')  )
+   }
+   wrappinunique()
+  shortcut: Alt+U
+  Interactive: no
+
+- Name: wrappinvv
+  Description: wrappinvv function
+  Binding: |-
+   wrappinvv <- function(x){
+   context <- rstudioapi::getActiveDocumentContext()
+   id <- context$id
+   slct <- context$selection
+   rstudioapi::insertText(text =  paste('View(as.data.frame(', slct[[1]]$text ,'))' ,sep='')  )
+   }
+   wrappinvv()
+  shortcut: Ctrl+E
+  Interactive: no
+
+- Name: wrappinview
+  Description: wrappinview function
+  Binding: |-
+   wrappinview <- function(x){
+   context <- rstudioapi::getActiveDocumentContext()
+   id <- context$id
+   slct <- context$selection
+   rstudioapi::insertText(text =  paste('View(', slct[[1]]$text ,')' ,sep='')  )
+   }
+   wrappinview()
+  shortcut: Ctrl+O
+  Interactive: no
+
+- Name: wrappinwritecsv
+  Description: wrappinwritecsv function
+  Binding: |-
+   wrappinwritecsv <- function(x){
+   context <- rstudioapi::getActiveDocumentContext()
+   id <- context$id
+   slct <- context$selection
+   rstudioapi::insertText(text =  paste('write.csv(', slct[[1]]$text ,', file.choose(), row.names=FALSE)' ,sep='')  )
+   }
+   wrappinwritecsv()
+  shortcut: Alt+W
+  Interactive: no
+
+
