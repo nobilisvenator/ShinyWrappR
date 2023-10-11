@@ -268,6 +268,9 @@ server <- function(input, output, session) {
   })
   
   
+
+  
+  
   observeEvent(input$saveYaml, {
     entryList <- entries()
     entriesToSave <- lapply(seq_along(entryList), function(i) {
@@ -287,35 +290,28 @@ server <- function(input, output, session) {
         Description = sprintf("%s function", entryName),
         Binding = entryBinding,
         shortcut = input[[paste0("fieldD_", i)]],
-        #Interactive = input[[paste0("fieldE_", i)]]
-        Interactive = as.logical(input[[paste0("fieldE_", i)]])
-        
+        Interactive = as.logical(input[[paste0("fieldE_", i)]]) 
       )
     })
     
-    observeEvent(input$saveYaml, {
-      # ... (rest of the code remains unchanged)
-      
-      entriesToSave <- Filter(Negate(is.null), entriesToSave)
-      yamlContent <- as.character(yaml::as.yaml(entriesToSave))
-      
-      # Adjust formatting
-      yamlContent <- gsub("  Binding: \"", "  Binding: |\n    ", yamlContent, fixed = TRUE)
-      yamlContent <- gsub("\"", "", yamlContent, fixed = TRUE)
-      yamlContent <- gsub("\\|\n    ", "|\n    ", yamlContent)  # Four spaces for line 4
-      yamlContent <- gsub("\n        ", "\n    ", yamlContent) # Adjust the whitespace for lines 5 to 10 to four spaces
-      yamlContent <- gsub("\n    ", "\n   ", yamlContent)      # Adjust the whitespace for lines 5 to 10 to three spaces
-      yamlContent <- paste(yamlContent, "\n", sep = "")        # Add one more newline to every entry
-      yamlContent <- gsub("Interactive: no", "Interactive: no\n", yamlContent) # Add an additional newline after Interactive field
-      yamlContent <- sub(": \\|-", ": \\|", yamlContent )
-      
-      
-      writeLines(yamlContent, yaml_file)
-    })
+    entriesToSave <- Filter(Negate(is.null), entriesToSave)
+    yamlContent <- as.character(yaml::as.yaml(entriesToSave))
     
- 
+    # Adjust formatting
+    yamlContent <- gsub("  Binding: \"", "  Binding: |\n    ", yamlContent, fixed = TRUE)
+    yamlContent <- gsub("\"", "", yamlContent, fixed = TRUE)
+    yamlContent <- gsub("\\|\n    ", "|\n    ", yamlContent)  # Four spaces for line 4
+    yamlContent <- gsub("\n        ", "\n    ", yamlContent) # Adjust the whitespace for lines 5 to 10 to four spaces
+    yamlContent <- gsub("\n    ", "\n   ", yamlContent)      # Adjust the whitespace for lines 5 to 10 to three spaces
+    yamlContent <- gsub("Interactive: \\[\\]", "Interactive: no\n", yamlContent) # Add an additional newline after Interactive field
+    yamlContent <- sub("Binding: \\|-", "Binding: |-", yamlContent )
     
+    writeLines(yamlContent, yaml_file)
   })
+  
+ 
+ 
+  
   
   
   
