@@ -1,3 +1,13 @@
+
+
+
+
+
+https://github.com/nobilisvenator/ShinyWrappR/assets/123887893/c921fc38-cf1a-4ddd-b812-a6eebf59661b
+
+
+
+
 OVERVIEW:
 ShinyWrappR was made to enhance the RStudio code writing experience.  This Shiny app and the gadenbuie/shrtcts* package allow mapping of custom code to RStudio's keyboard shortcuts.  Additionally, your custom code will wrap around highlighted text/code in the editor pane.  Simply add your own entries to this Shiny app and run a few lines of code to reduce overall typing in Rstudio.
 
