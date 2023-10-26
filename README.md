@@ -19,7 +19,7 @@ Getting Started:
 2. RStudio requisites:
 	* install.packages("devtools").
 	* remotes::install_github("gadenbuie/shrtcts", force = TRUE).
- 	* Run ShinyWrappR.R to open the app.
+ 	* Run app.R or shiny::runGitHub(repo = "ShinyWrappR",username = "nobilisvenator").
 
 3. Each yaml entry consists of: 
 	* Row one - Text name.
